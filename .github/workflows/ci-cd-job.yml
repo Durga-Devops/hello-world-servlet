@@ -2,7 +2,7 @@ name: CI-CD-Job
 on:
   push:
     branches:
-    - Develop
+    - Master
 jobs:
   build:
     runs-on:
