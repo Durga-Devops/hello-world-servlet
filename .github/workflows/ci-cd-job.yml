@@ -19,6 +19,6 @@ jobs:
       uses: actions/setup-java@v7
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'adopt'
     - name: Build with Maven
       run: mvn --batch-mode --update-snapshots package
