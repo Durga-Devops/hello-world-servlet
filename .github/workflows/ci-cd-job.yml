@@ -22,17 +22,11 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn --batch-mode --update-snapshots package
-    - name: Deployment
-      concurrency:
-        group: production
-        cancel-in-progress: true
-     -on:
-       push:
-         branches:
-           - main
- deployment:
+      
+  deploy:
     runs-on: ubuntu-latest
     environment: production
     steps:
     - name: deploy
-        # ...deployment-specific steps
+      shell: bash
+      run: echo ${{ github.actor }}
