@@ -24,8 +24,10 @@ jobs:
     - name: Build with Maven
       run: mvn --batch-mode --update-snapshots package
     -name: Deployment
-     concurrency: production
-     on:
+     concurrency:
+       group: production
+       cancel-in-progress: true
+    -on:
        push:
          branches:
            - main
